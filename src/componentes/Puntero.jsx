@@ -20,8 +20,8 @@ const Puntero = () => {
         const newSquares = [];
         for (let i = 0; i < 13; i++) {
             const size = Math.floor(Math.random() * 10) + 10;
-            const left = e.clientX + Math.floor(Math.random() * (e.clientX)) / 10 - 640;
-            const top = e.clientY + Math.floor(Math.random() * (e.clientY)) / 10 - 220;
+            const left = e.clientX -530;
+            const top = e.clientY -170;
             newSquares.push({ size, left, top });
         }
         setSquares(newSquares);
@@ -42,7 +42,7 @@ const Puntero = () => {
     }, []);
 
     return (
-        <div className="puntero" onClick={handleClick}>
+        <div className="puntero" onMouseMove={handleClick}>
             <div style={style}>
                 {squares.map((square, index) => (
                     <div
